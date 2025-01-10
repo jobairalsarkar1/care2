@@ -5,10 +5,12 @@ import { useInView } from "react-intersection-observer";
 import { FaPlus, FaPercent } from "react-icons/fa";
 import { Reviews } from "../components";
 
+/* This custom component is for showing the dynamic numbers instead of static */
 const AnimatedNumber = ({ value }) => {
   const [count, setCount] = useState(0);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
+  /* After each step time the count will increase */
   useEffect(() => {
     if (inView) {
       let start = 0;

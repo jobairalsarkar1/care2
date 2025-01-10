@@ -42,9 +42,11 @@ const Contact = () => {
             className="h-full"
             style={{ border: 0 }}
             allowFullScreen=""
-            loading="lazy"
+            loading="lazy" // Google map image lazy loading.
           ></iframe>
         </div>
+
+        {/* Contact form allows client to send mail */}
         <form
           className="flex-[1] bg-white p-8 rounded-lg shadow-lg"
           onSubmit={handleSubmit}
@@ -99,6 +101,10 @@ const Contact = () => {
                 aria-required="true"
               />
             </div>
+
+            {/* This textarea is a bit modified in order to increase UI&UX now 
+            the user won't have to drag it to expand message box rather the field
+            will automatically adjust itself. */}
             <div>
               <label
                 htmlFor="message"

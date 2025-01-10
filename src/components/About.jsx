@@ -10,7 +10,7 @@ const About = () => {
         <div className="flex w-full xl:w-[40%] h-[390px] xl:h-auto lg:rounded-lg p-2 bg-white z-10 overflow-hidden lg:shadow-lg">
           <img
             src={about_cover}
-            alt="Illustration of customer service"
+            alt="Illustration of Care2 customer service"
             className="rounded-lg w-full h-full object-cover"
             loading="lazy"
           />

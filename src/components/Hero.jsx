@@ -10,10 +10,9 @@ const Hero = () => {
   // const images = [abroad_study, abroad_live, abroad_work]; // Array of images
   const images = useMemo(() => [abroad_study, abroad_live, abroad_work], []);
 
-
   useEffect(() => {
     const handleAnimationEnd = () => {
-      setIsSpinningComplete(true); // Set spinning complete state to true
+      setIsSpinningComplete(true); // To Ensure sping is done.
     };
 
     const element = animationRef.current;
@@ -29,22 +28,26 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    // Only cycle images after spinning is complete
+    // After spin complition cycle images.
     if (isSpinningComplete) {
       const interval = setInterval(() => {
         setCurrentImage((prevImage) => (prevImage + 1) % images.length); // Cycle through images
-      }, 5000); // Change image every 3 seconds
+      }, 5000); // Image will change every 5s.
 
       return () => clearInterval(interval); // Clear interval when component unmounts
     }
-  }, [isSpinningComplete, images.length]);
+  }, [isSpinningComplete]);
 
   return (
     <section className="relative bg-cover bg-center h-screen flex items-center justify-center">
       <div className="px-5 sm:px-24 z-10 h-full text-center grid grid-cols-1 lg:grid-cols-2">
         {/* Text and Button Holder */}
         <div className="px-4 flex flex-col items-center justify-center">
-          <img src={plane} alt="" className="lg:hidden h-40 w-56" />
+          <img
+            src={plane}
+            alt="Care2 Consultancy Plane Placeholder"
+            className="lg:hidden h-40 w-56"
+          />
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 bg-gradient-to-r from-blue-500 to-teal-500 bg-clip-text text-transparent font-heading"
             style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}
@@ -60,6 +63,7 @@ const Hero = () => {
             smooth={true}
             duration={500}
             className="bg-gradient-to-r from-blue-500 to-teal-500 text-white hover:from-teal-500 hover:to-blue-500 font-semibold py-3 px-8 rounded-2xl text-lg transition-all cursor-pointer"
+            aria-label="Get in touch with Care2 Training Consultancy"
           >
             Get in Touch Today
           </Link>
@@ -75,7 +79,7 @@ const Hero = () => {
                 : ""
             } transition-all duration-500 ease-out`}
           >
-            {/* Only show images once spinning is complete */}
+            {/* Once spining is complete start showing images */}
             {isSpinningComplete && (
               <div className="relative w-full h-full overflow-hidden rounded-[40px]">
                 {/* All images are rendered but only the current image is visible */}
