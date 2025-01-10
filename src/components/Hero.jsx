@@ -1,14 +1,19 @@
 import { Link } from "react-scroll";
 import { plane, abroad_study, abroad_live, abroad_work } from "../assets";
 import { useEffect, useState, useRef } from "react";
+import { useMemo } from "react";
 
 const Hero = () => {
   const [isSpinningComplete, setIsSpinningComplete] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0); // Track current image
   const animationRef = useRef(null);
+  // const images = [abroad_study, abroad_live, abroad_work]; // Array of images
+  const images = useMemo(() => [abroad_study, abroad_live, abroad_work], []);
+
 
   useEffect(() => {
     const handleAnimationEnd = () => {
-      setIsSpinningComplete(true);
+      setIsSpinningComplete(true); // Set spinning complete state to true
     };
 
     const element = animationRef.current;
@@ -22,6 +27,17 @@ const Hero = () => {
       }
     };
   }, []);
+
+  useEffect(() => {
+    // Only cycle images after spinning is complete
+    if (isSpinningComplete) {
+      const interval = setInterval(() => {
+        setCurrentImage((prevImage) => (prevImage + 1) % images.length); // Cycle through images
+      }, 5000); // Change image every 3 seconds
+
+      return () => clearInterval(interval); // Clear interval when component unmounts
+    }
+  }, [isSpinningComplete, images.length]);
 
   return (
     <section className="relative bg-cover bg-center h-screen flex items-center justify-center">
@@ -59,16 +75,32 @@ const Hero = () => {
                 : ""
             } transition-all duration-500 ease-out`}
           >
-            <img src="" alt="" />
-            {!isSpinningComplete && (
-              <>
-                {/* Spinning Border */}
-                <div className="gradient-border"></div>
-
-                {/* Glow Effect */}
-                <div className="gradient-glow"></div>
-              </>
+            {/* Only show images once spinning is complete */}
+            {isSpinningComplete && (
+              <div className="relative w-full h-full overflow-hidden rounded-[40px]">
+                {/* All images are rendered but only the current image is visible */}
+                {images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image}
+                    alt={`abroad-${index}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                      index === currentImage ? "opacity-100" : "opacity-0"
+                    }`}
+                    style={{
+                      transition: "opacity 1s ease-in-out",
+                    }}
+                    loading="lazy"
+                  />
+                ))}
+              </div>
             )}
+
+            {/* Spinning Border is removed after animation completes */}
+            {!isSpinningComplete && <div className="gradient-border"></div>}
+
+            {/* Glow Effect removed after animation completes */}
+            {isSpinningComplete && <div className="gradient-glow hidden"></div>}
           </div>
         </div>
       </div>
