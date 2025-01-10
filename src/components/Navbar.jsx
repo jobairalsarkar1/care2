@@ -92,9 +92,10 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`pt-28 pl-9 fixed lg:hidden top-0 right-0 w-[45%] h-screen bg-[#2d6a4f] text-white flex flex-col items-start justify-start gap-5 transform ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300`}
+        className={`pt-28 pl-8 md:pl-9 text-sm md:text-lg fixed md:hidden top-0 right-0 w-[60%] h-screen bg-gradient-to-br from-teal-600 via-green-600 to-teal-600
+ text-white flex flex-col items-start justify-start gap-5 transform ${
+   isOpen ? "translate-x-0" : "translate-x-full"
+ } transition-transform duration-300`}
       >
         {/* Mobile Menu Toggle (Close) */}
         {isOpen && (
@@ -112,7 +113,7 @@ const Navbar = () => {
               to="about"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-gray-300"
+              className="cursor-pointer hover:text-gray-300 text-sm md:text-lg"
               onClick={toggleMenu} // Close menu on link click
             >
               About
@@ -123,7 +124,7 @@ const Navbar = () => {
               to="services"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-gray-300"
+              className="cursor-pointer hover:text-gray-300 text-sm md:text-lg"
               onClick={toggleMenu}
             >
               Services
@@ -134,7 +135,7 @@ const Navbar = () => {
               to="choose-us"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-gray-300"
+              className="cursor-pointer hover:text-gray-300 text-sm md:text-lg"
               onClick={toggleMenu}
             >
               Why Choose Us?
@@ -145,7 +146,7 @@ const Navbar = () => {
               to="contact"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-gray-300"
+              className="cursor-pointer hover:text-gray-300 text-sm md:text-lg"
               onClick={toggleMenu}
             >
               Contact
@@ -164,7 +165,7 @@ const Navbar = () => {
       {/* Button in Desktop view */}
       <Link
         to="#"
-        className="hidden md:block px-3 py-1.5 text-white rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 shadow-md hover:bg-gradient-to-l hover:from-blue-500 hover:to-blue-700 hover:shadow-lg transition-transform duration-300 transform hover:-translate-y-0.5"
+        className="hidden md:block px-2 py-1.5 text-white rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 shadow-md hover:bg-gradient-to-l hover:from-blue-500 hover:to-blue-700 hover:shadow-lg transition-transform duration-300 transform hover:-translate-y-0.5"
       >
         Book a Meeting
       </Link>
