@@ -1,39 +1,66 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap"); */
+/* Importing fonts */
 @import "@fontsource/poppins";
 @import "@fontsource/roboto";
+
+/* Tailwind Base Setup */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Enable smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* This helps to spin the gradient border in Hero section */
+/* Keyframes for spinning animation */
 @keyframes borderspin {
   from {
-    --angle: 0deg;
+    transform: rotate(0deg);
   }
   to {
-    --angle: 360deg;
+    transform: rotate(360deg);
   }
 }
 
-/* Custom Shapes for Hero Section */
-.clip-path-triangle {
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+.gradient-border {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  z-index: -1;
+  padding: 3px;
+  background-image: conic-gradient(
+    from 0deg,
+    #00bfff 65%,
+    #00ced1,
+    #1e90ff
+  ); /* Gradient colors adjusted */
+  animation: borderspin 5s linear 1 forwards;
 }
 
-.clip-path-triangle-2 {
-  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+/* Glow Effect */
+.gradient-glow {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  z-index: -1;
+  blur: 1.5rem;
+  opacity: 0.5;
+  background-image: conic-gradient(
+    from 0deg,
+    #00bfff 65%,
+    #00ced1,
+    #1e90ff
+  ); /* Same gradient as border */
+  animation: borderspin 5s linear 1 forwards;
 }
 
-/* Text Shadow for Better Readability */
-.text-shadow-md {
-  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* Some predefined classes to be used in components */
+/* Utility classes */
 @layer utilities {
   .header {
     @apply flex justify-between items-center sm:px-24 px-5 py-2 absolute top-0 bg-transparent right-0 left-0;
@@ -49,9 +76,5 @@ html {
 
   .subhead-text {
     @apply font-normal text-lg sm:text-xl relative font-sans;
-  }
-
-  .section {
-    @apply h-screen w-full bg-black;
   }
 }

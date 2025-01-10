@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center lg:px-24 px-5 py-4 absolute top-0 bg-transparent right-0 left-0 z-30">
+    <nav className="flex justify-between items-center lg:px-24 px-5 py-4 border border-b-gray-300 absolute top-0 bg-transparent right-0 left-0 z-30">
       {/* Care2 Logo */}
       <Link to="hero">
         <img

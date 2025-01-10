@@ -58,11 +58,12 @@ const ChooseUs = () => {
 
         {/* Achievements/Statistics */}
         <div className="grid grid-cols-2 gap-4">
-          <div className="sm:row-span-2 bg-blue-400 p-8 rounded-xl shadow-lg text-center flex flex-col items-center justify-center">
+          <div className="sm:row-span-2 bg-gradient-to-r from-blue-400 to-blue-700 p-8 rounded-xl shadow-lg text-center flex flex-col items-center justify-center">
             {/* <h2 className="text-2xl sm:text-4xl font-bold text-black">
               10,000+
             </h2> */}
             <span className="flex items-center justify-center">
+              {/* This component is responsible for showing dynamic number */}
               <AnimatedNumber value={10000} />
               <FaPlus className="w-6 h-6" />
             </span>
@@ -70,7 +71,7 @@ const ChooseUs = () => {
               Total Clients
             </p>
           </div>
-          <div className="bg-green-400 p-6 rounded-lg shadow-md text-center flex flex-col items-center justify-center">
+          <div className="bg-gradient-to-r from-green-400 to-green-600 p-6 rounded-lg shadow-md text-center flex flex-col items-center justify-center">
             {/* <h2 className="text-2xl sm:text-4xl font-bold text-black">98%</h2> */}
             <span className="flex items-center justify-center">
               <AnimatedNumber value={98} />
@@ -80,7 +81,7 @@ const ChooseUs = () => {
               Success Rate
             </p>
           </div>
-          <div className="col-span-2 sm:col-span-1 bg-yellow-200 p-6 rounded-lg shadow-md text-center flex flex-col items-center justify-center">
+          <div className="col-span-2 sm:col-span-1 bg-gradient-to-r from-yellow-300 to-yellow-500 p-6 rounded-lg shadow-md text-center flex flex-col items-center justify-center">
             {/* <h2 className="text-2xl sm:text-4xl font-bold text-black">10+</h2> */}
             {/* <AnimatedNumber value={10} /> */}
             <span className="flex items-center justify-center">

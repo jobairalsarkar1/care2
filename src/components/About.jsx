@@ -5,19 +5,19 @@ const About = () => {
     <section className="max-container bg-[#e6f7e6] font-sans">
       <h2 className="head-text text-center text-[#2d6a4f] mb-5">About Us</h2>
 
-      <div className="flex flex-col xl:flex-row gap-8">
+      <div className="flex flex-col xl:flex-row gap-0 lg:gap-6">
         {/* About us Image */}
-        <div className="flex w-full xl:w-[40%] h-[390px] xl:h-auto bg-green-400 z-10 overflow-hidden">
+        <div className="flex w-full xl:w-[40%] h-[390px] xl:h-auto lg:rounded-lg p-2 bg-white z-10 overflow-hidden lg:shadow-lg">
           <img
             src={about_cover}
             alt="Illustration of customer service"
-            className="rounded-lg shadow-lg w-full h-full object-cover"
+            className="rounded-lg w-full h-full object-cover"
             loading="lazy"
           />
         </div>
 
         {/* About Us content container */}
-        <div className="flex flex-col w-full xl:w-[60%] h-auto xl:h-auto px-6 py-4">
+        <div className="flex flex-col w-full xl:w-[60%] h-auto xl:h-auto px-7 py-5 bg-white lg:rounded-lg shadow-lg">
           <p className="text-gray-800 mb-2 leading-relaxed text-justify subhead-text">
             At Care2 Training Consultancy, we are dedicated to helping
             individuals achieve their dreams of studying, working, and living

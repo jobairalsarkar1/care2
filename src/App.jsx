@@ -7,7 +7,6 @@ import {
   Footer,
   Hero,
 } from "./components";
-// import Landing from "./pages/Landing";
 
 const App = () => {
   return (
