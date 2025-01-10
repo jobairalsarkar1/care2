@@ -9,21 +9,31 @@ html {
   scroll-behavior: smooth;
 }
 
-/* @keyframes slideIn {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
+/* This helps to spin the gradient border in Hero section */
+@keyframes borderspin {
+  from {
+    --angle: 0deg;
   }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
+  to {
+    --angle: 360deg;
   }
 }
 
-.slide-in {
-  animation: slideIn 0.8s ease-out forwards;
-} */
+/* Custom Shapes for Hero Section */
+.clip-path-triangle {
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
 
+.clip-path-triangle-2 {
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+/* Text Shadow for Better Readability */
+.text-shadow-md {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Some predefined classes to be used in components */
 @layer utilities {
   .header {
     @apply flex justify-between items-center sm:px-24 px-5 py-2 absolute top-0 bg-transparent right-0 left-0;

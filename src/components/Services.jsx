@@ -25,7 +25,7 @@ const Services = () => {
               <p className="text-[#333333] mb-6 text-lg text-justify leading-relaxed flex-grow font-sans">
                 {service.description}
               </p>
-              <button className="w-full bg-blue-600 text-white py-3 px-5 rounded-lg hover:bg-blue-700 transition duration-200 mt-auto">
+              <button className="w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 px-5 rounded-lg shadow-md hover:bg-gradient-to-l hover:from-blue-500 hover:to-blue-700 hover:shadow-lg transition duration-300 mt-auto">
                 {service.cta}
               </button>
             </div>
