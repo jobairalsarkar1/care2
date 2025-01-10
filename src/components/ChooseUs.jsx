@@ -66,7 +66,7 @@ const ChooseUs = () => {
             </h2> */}
             <span className="flex items-center justify-center">
               {/* This component is responsible for showing dynamic number */}
-              <AnimatedNumber value={10000} />
+              <AnimatedNumber value={2000} />
               <FaPlus className="w-6 h-6" />
             </span>
             <p className="text-xl sm:text-2xl font-semibold text-gray-800">
